@@ -3,6 +3,10 @@ package br.com.contaazul.bankapi.model.utils;
 import java.time.Duration;
 import java.time.LocalDate;
 
+/**
+ * Classe auxiliar para cálculo da diferença de dias entre datas
+ * @author Ednardo Rubens
+ */
 public class DataUtils {
 
     private DataUtils() {

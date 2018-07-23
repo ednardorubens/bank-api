@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 /**
- * Classe de acesso ao banco de dados
+ * Interface de acesso ao banco de dados
  * @author Ednardo Rubens
  */
 @Repository

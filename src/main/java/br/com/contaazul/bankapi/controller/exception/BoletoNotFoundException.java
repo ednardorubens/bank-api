@@ -4,7 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
- *
+ * Excessão gerada ao tentar utilizar boletos inexistentes
  * @author Ednardo Rubens
  */
 @ResponseStatus(HttpStatus.NOT_FOUND)

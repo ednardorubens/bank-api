@@ -7,7 +7,7 @@
     </Appenders>
     <Loggers>
         <Logger name="org.hibernate" level="info" />
-        <Logger name="br.com.ranking_cidades" level="debug" />
+        <Logger name="br.com.contaazul" level="debug" />
         <Logger name="org.springframework" level="info" />
         <Root level="info">
             <AppenderRef ref="STDOUT"/>

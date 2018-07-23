@@ -12,7 +12,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- *
+ * Classe de configuração da documentação da API
  * @author Ednardo Rubens
  */
 @Configuration

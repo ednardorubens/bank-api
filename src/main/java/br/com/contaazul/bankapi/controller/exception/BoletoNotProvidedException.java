@@ -4,7 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
- *
+ * Excessão gerada ao tentar utilizar boletos inválidos
  * @author Ednardo Rubens
  */
 @ResponseStatus(HttpStatus.BAD_REQUEST)

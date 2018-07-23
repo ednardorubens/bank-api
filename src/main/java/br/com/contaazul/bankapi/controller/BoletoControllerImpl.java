@@ -17,6 +17,11 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+
+/**
+ * Implementação da interface de controller dos boletos
+ * @author Ednardo Rubens
+ */
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/bankslips")
@@ -89,6 +94,11 @@ public class BoletoControllerImpl implements BoletoController {
         boletoService.cancelar(boletoId);
     }
 
+    /**
+     * Método utilizado para montar a url do Location
+     * @param boletoId
+     * @return url do recurso
+     */
     private String getLocation(final UUID boletoId) {
         try {
             return ServletUriComponentsBuilder.fromCurrentRequest()

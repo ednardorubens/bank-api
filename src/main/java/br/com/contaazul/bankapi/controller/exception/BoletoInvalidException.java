@@ -8,7 +8,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
- *
+ * Excessão gerada ao tentar utilizar boletos inválidos
  * @author Ednardo Rubens
  */
 @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)

@@ -6,7 +6,7 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ * Interface de controller dos boletos
  * @author Ednardo Rubens
  */
 public interface BoletoController {

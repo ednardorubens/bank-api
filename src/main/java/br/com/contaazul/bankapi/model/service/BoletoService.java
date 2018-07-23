@@ -1,8 +1,5 @@
 package br.com.contaazul.bankapi.model.service;
 
-import br.com.contaazul.bankapi.controller.exception.BoletoInvalidException;
-import br.com.contaazul.bankapi.controller.exception.BoletoNotFoundException;
-import br.com.contaazul.bankapi.controller.exception.BoletoNotProvidedException;
 import br.com.contaazul.bankapi.model.entity.BoletoEntity;
 import java.time.LocalDate;
 import java.util.List;

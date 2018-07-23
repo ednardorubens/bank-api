@@ -12,10 +12,16 @@ import java.util.Set;
 import java.util.UUID;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * Implementação da interface de serviço do boleto
+ * @author Ednardo Rubens
+ */
+@Log4j2
 @Service
 @Transactional(readOnly = true)
 public class BoletoServiceImpl implements BoletoService {
@@ -33,6 +39,7 @@ public class BoletoServiceImpl implements BoletoService {
     
     @Override
     public BoletoEntity buscar(final UUID boletoId) {
+        log.debug("Buscando o boleto id: " + Optional.ofNullable(boletoId).toString());
         return boletoRepository.findById(boletoId).orElseThrow(BoletoNotFoundException::new).atualizarMulta();
     }
 
@@ -49,6 +56,7 @@ public class BoletoServiceImpl implements BoletoService {
     @Override
     @Transactional(readOnly = false)
     public BoletoEntity criar(final BoletoEntity boleto) {
+        log.debug("Criando o boleto: " + Optional.ofNullable(boleto).toString());
         return salvar(boleto);
     }
     
@@ -56,6 +64,7 @@ public class BoletoServiceImpl implements BoletoService {
     @Transactional(readOnly = false)
     public void pagar(final UUID boletoId, final LocalDate dataPagamento) {
         final BoletoEntity boletoEncontrado = buscar(boletoId);
+        log.debug("Pagando o boleto: " + Optional.ofNullable(boletoEncontrado).toString());
         salvar(boletoEncontrado.pagar(dataPagamento));
     }
     
@@ -63,6 +72,7 @@ public class BoletoServiceImpl implements BoletoService {
     @Transactional(readOnly = false)
     public void cancelar(final UUID boletoId) {
         final BoletoEntity boletoEncontrado = buscar(boletoId);
+        log.debug("Cancelando o boleto: " + Optional.ofNullable(boletoEncontrado).toString());
         salvar(boletoEncontrado.cancelar());
     }
 }

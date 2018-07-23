@@ -1,11 +1,10 @@
 package br.com.contaazul.bankapi.model.utils;
 
 import java.math.BigDecimal;
-import java.math.MathContext;
 import java.math.RoundingMode;
 
 /**
- *
+ * Classe auxiliar para cálculo de multa
  * @author Ednardo Rubens
  */
 public class MultaUtils {

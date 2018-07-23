@@ -21,12 +21,13 @@ import javax.validation.constraints.NotNull;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
- *
+ * Entidade boleto
  * @author Ednardo Rubens
  */
-@Entity @Getter
+@Entity @Getter @ToString
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 @Table(schema = "bank", name = "tb_boletos")
 @EqualsAndHashCode(of = {"id", "due_date", "total_in_cents", "customer", "status"})

@@ -6,6 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
+/**
+ * Classe principal da aplicação
+ * @author Ednardo Rubens
+ */
 @SpringBootApplication
 public class BankApiApplication {
 
