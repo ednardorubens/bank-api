@@ -4,7 +4,7 @@ O objetivo desta API é disponibilizar uma interface REST para geração de bole
 
 ## Executar projeto
 
-Para executar a aplicação você precisará executar os comandos:
+Para executar a aplicação você precisará baixar o projeto e executar os comandos:
 
     mvnw clean install
 
@@ -16,4 +16,4 @@ E depois:
 
 A documentação da API esta disponível na própria aplicação. Para acessá-la, basta subir a aplicação e acessar a url abaixo:
 
-		http://localhost:9000/rest/swagger-ui.html
+	http://localhost:9000/rest/swagger-ui.html
