@@ -63,7 +63,7 @@ public class BoletoControllerImpl implements BoletoController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public BoletoEntity criar(
-        @ApiParam(value = "boleto", required = true, example = "{\"due_date\" : \"2018-01-01\" , \"total_in_cents\" : \"100000\" , \"customer\" : \"Trillian Company\"}")
+        @ApiParam(value = "boleto", required = true)
         @RequestBody(required = false) final BoletoEntity boleto, final HttpServletResponse response) {
         final BoletoEntity boletoCriado = Optional.ofNullable(boletoService.criar(boleto)).orElseThrow(BoletoNotProvidedException::new);
         response.setHeader("Location", getLocation(boletoCriado.getId()));
@@ -81,7 +81,7 @@ public class BoletoControllerImpl implements BoletoController {
     public void pagar(
         @ApiParam(value = "id do boleto", required = true)
         @PathVariable("id") final UUID boletoId,
-        @ApiParam(value = "data de pagamento do boleto", required = true, type = "string", example = "{ \"payment_date\" : \"2018-06-30\" }")
+        @ApiParam(value = "data de pagamento do boleto", required = true)
         @RequestBody(required = false) final BoletoEntity boleto) {
         if (boleto == null || boleto.getPayment_date() == null) {
             throw new BoletoNotProvidedException();
