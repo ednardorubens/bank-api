@@ -44,7 +44,7 @@ public class BoletoServiceImpl implements BoletoService {
     }
 
     private BoletoEntity salvar(final BoletoEntity boleto) {
-        BoletoEntity boletoOpt = Optional.ofNullable(boleto).orElseThrow(BoletoNotProvidedException::new);
+        final BoletoEntity boletoOpt = Optional.ofNullable(boleto).orElseThrow(BoletoNotProvidedException::new);
         final Set<ConstraintViolation<BoletoEntity>> violations = validator.validate(boletoOpt);
         if (violations.isEmpty()) {
             return boletoRepository.save(boletoOpt);
@@ -56,8 +56,9 @@ public class BoletoServiceImpl implements BoletoService {
     @Override
     @Transactional(readOnly = false)
     public BoletoEntity criar(final BoletoEntity boleto) {
-        log.debug("Criando o boleto: " + Optional.ofNullable(boleto).toString());
-        return salvar(boleto);
+        final BoletoEntity boletoOpt = Optional.ofNullable(boleto).orElseThrow(BoletoNotProvidedException::new);
+        log.debug("Criando o boleto: " + boletoOpt.toString());
+        return salvar(new BoletoEntity(boletoOpt.getDue_date(), boletoOpt.getTotal_in_cents(), boletoOpt.getCustomer()));
     }
     
     @Override

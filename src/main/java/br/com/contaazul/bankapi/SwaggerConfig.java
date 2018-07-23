@@ -23,6 +23,9 @@ public class SwaggerConfig {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2).select()
             .apis(RequestHandlerSelectors.basePackage("br.com.contaazul.bankapi.controller"))
-            .paths(PathSelectors.any()).build().useDefaultResponseMessages(false);
+            .paths(PathSelectors.any()).build().useDefaultResponseMessages(false)
+            .apiInfo(new ApiInfo("Bank API", "O objetivo desta API é disponibilizar uma interface REST para geração de boletos.", 
+                "v1", "Terms of service", new Contact("Ednardo Rubens", "https://github.com/ednardorubens", "ednardorubens@hotmail.com"), 
+                "Apache 2.0", "http://www.apache.org/licenses/LICENSE-2.0", Collections.emptyList()));
     }
 }

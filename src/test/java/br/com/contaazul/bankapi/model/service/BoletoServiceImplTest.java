@@ -61,10 +61,9 @@ public class BoletoServiceImplTest {
 
     @Test
     public void criarBoletoPendente() {
-        final BoletoEntity boletoPendente = Boletos.boletoPendente();
+        final BoletoEntity boletoNovo = Boletos.boletoNovo();
         Mockito.when(boletoRepository.save(Mockito.any(BoletoEntity.class))).thenAnswer(iom -> (BoletoEntity) iom.getArgument(0));
-        final BoletoEntity boletoSalvo = boletoService.criar(boletoPendente);
-        Assert.assertEquals("Boleto diferente", boletoPendente, boletoSalvo);
+        Assert.assertNotNull("Boleto diferente", boletoService.criar(boletoNovo).getId());
     }
     
     @Test(expected = BoletoNotProvidedException.class)
