@@ -26,7 +26,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * Classe
+ * Classe de teste de integração de boletos
  * @author Ednardo Rubens
  */
 @SuppressWarnings("null")

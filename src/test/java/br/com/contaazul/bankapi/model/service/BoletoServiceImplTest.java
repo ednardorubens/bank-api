@@ -22,7 +22,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 /**
- *
+ * Classe de teste do serviço de boleto
  * @author Ednardo Rubens
  */
 @RunWith(MockitoJUnitRunner.class)

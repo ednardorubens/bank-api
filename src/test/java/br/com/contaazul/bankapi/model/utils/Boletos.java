@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- *
+ * Classe com boletos a serem utilizados nos testes
  * @author Ednardo Rubens
  */
 public class Boletos {
