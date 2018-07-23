@@ -1,0 +1,1 @@
+ALTER TABLE bank.tb_boletos ADD COLUMN cancelment_date DATE;
